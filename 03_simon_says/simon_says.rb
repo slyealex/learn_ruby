@@ -7,7 +7,7 @@ def shout(word)
 end
 
 def repeat(word, num = 2)
-  [word] * num * " "
+  ([word] * num).join(" ")
 end
 
 def start_of_word(word, num = 1)
@@ -19,5 +19,13 @@ def first_word(word)
 end
 
 def titleize(word)
-  word.split.map(capitalize)
+  word.split.map(&:capitalize).join(" ")
+  # [word].each do |word|
+  #   case word
+  #   when word == "and" || "over" || "the"
+  #     word.downcase.join(" ")
+  #   else
+  #     word.capitalize.join(" ")
+  #   end
+  # end
 end
